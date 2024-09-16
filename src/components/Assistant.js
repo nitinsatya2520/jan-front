@@ -9,7 +9,7 @@ const Assistant = () => {
   // Function to start the assistant
   const startAssistant = async () => {
     try {
-      await axios.post('http://localhost:5000/ask', { command: 'hey jan' });
+      await axios.post('https://jan-server.vercel.app/ask', { command: 'hey jan' });
       setIsListening(true); // Start polling for responses
       setResponse('Listening for response...');
     } catch (error) {
@@ -23,7 +23,7 @@ const Assistant = () => {
     if (!isListening) return;
 
     try {
-      const result = await axios.post('http://localhost:5000/ask', { command: 'hey jan' });
+      const result = await axios.post('https://jan-server.vercel.app/ask', { command: 'hey jan' });
       setResponse(result.data);
     } catch (error) {
       console.error('Error fetching response:', error);
