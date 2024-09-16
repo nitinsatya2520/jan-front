@@ -1,0 +1,93 @@
+/* src/components/Assistant.css */
+
+/* Container styling */
+.assistant-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #f4f4f4 0%, #eaeaea 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  /* Container hover effect */
+  .assistant-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Button styling */
+  .assistant-button {
+    padding: 12px 24px;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button hover effect */
+  .assistant-button:hover {
+    background: linear-gradient(45deg, #0056b3, #003d7a);
+    transform: translateY(-2px);
+  }
+  
+  /* Button active effect */
+  .assistant-button:active {
+    transform: translateY(1px);
+  }
+  
+  /* Response container styling */
+  .response-container {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Response title styling */
+  .response-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+  }
+  
+  /* Response text styling */
+  .response-text {
+    font-size: 18px;
+    color: #555;
+    white-space: pre-wrap; /* Preserve whitespace formatting */
+    line-height: 1.6;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 600px) {
+    .assistant-container {
+      padding: 15px;
+      max-width: 90%;
+    }
+    
+    .assistant-button {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+    
+    .response-title {
+      font-size: 20px;
+    }
+    
+    .response-text {
+      font-size: 16px;
+    }
+  }
+  
