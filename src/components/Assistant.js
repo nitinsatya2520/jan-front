@@ -9,9 +9,9 @@ const Assistant = () => {
   // Function to start the assistant
   const startAssistant = async () => {
     try {
-      await axios.post('https://jan-server.vercel.app/ask', { command: 'hey jan' });
+      const result = await axios.post('https://jan-server.vercel.app/ask', { command: 'hey jan' });
       setIsListening(true); // Start polling for responses
-      setResponse('Listening for response...');
+      setResponse(result.data || 'Listening for response...');
     } catch (error) {
       console.error('Error sending command:', error);
       setResponse('Error occurred while communicating with the server.');
@@ -23,7 +23,8 @@ const Assistant = () => {
     if (!isListening) return;
 
     try {
-      const result = await axios.post('https://jan-server.vercel.app/ask', { command: 'hey jan' });
+      // This would be a different endpoint if you have a dedicated one for polling
+      const result = await axios.get('https://jan-server.vercel.app/ask');
       setResponse(result.data);
     } catch (error) {
       console.error('Error fetching response:', error);
